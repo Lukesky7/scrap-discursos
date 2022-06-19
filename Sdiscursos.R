@@ -2,10 +2,12 @@ library(rvest)
 library(polite)
 
 
-####Navegar links discursos
+####Sitio web y chequear si permite scrap
 url <- "https://www.casarosada.gob.ar/informacion/discursos"
 bow(url)
 
+
+####Creamos tabla con links de cada discurso
 
 dflinks <- data.frame()
 
@@ -13,7 +15,7 @@ for(xpg in seq(from = 0,to = 1040, by = 40)){
   link = paste0("https://www.casarosada.gob.ar/informacion/discursos?start=", xpg ,"")
   try(links <- read_html(link) %>%
         html_nodes(".panel") %>%
-        html_attr("href")) ####link peliculas
+        html_attr("href"))
   links <- paste0("https://www.casarosada.gob.ar",links)
   
   
@@ -27,7 +29,7 @@ for(xpg in seq(from = 0,to = 1040, by = 40)){
 
 
 
-####Separamos links y extraemos con for
+####Separamos links y extraemos fecha-titulo-discurso
 
 Dislinks <- dflinks$links
 
