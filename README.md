@@ -12,3 +12,6 @@ convertirlo a un excel o csv para su análisis.
 - Cantidad de discursos por mes, año y período presidencial.
 - Analizar si exiten cambios en el tono del discurso,
 dependiendo si se está próximo a elecciones o post.
+
+
+Con un script similar se puede scrapear conferencias y archivo.
